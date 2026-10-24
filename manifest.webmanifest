@@ -1,0 +1,11 @@
+{
+  "name": "Карта пространства — ТТК",
+  "short_name": "Карта пространства",
+  "description": "Интерактивная карта помещений с 2D-планом, 3D-моделью и панорамами",
+  "lang": "ru",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f5f7fb",
+  "theme_color": "#111b35"
+}
