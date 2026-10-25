@@ -687,7 +687,9 @@ $('publishedMapFile')?.addEventListener('change',async e=>{
 (()=>{
  const $p=id=>document.getElementById(id);const modal=$p('mobilePanoModal'),video=$p('mobilePanoVideo'),status=$p('mobilePanoStatus'),stability=$p('panoStability'),direction=$p('panoDirection'),fill=$p('panoProgressFill'),progressText=$p('panoProgressText'),sensorState=$p('panoSensorState'),ticks=$p('panoTicks'),captureBtn=$p('mobilePanoCapture'),finishBtn=$p('mobilePanoFinish'),startBtn=$p('mobilePanoStart'),preview=$p('mobilePanoPreview'),download=$p('mobilePanoDownload');
  if(!modal)return;
- const STEP=24,STABILITY_LIMIT=28,MAX_SIDE=1280; // Configure window.PANORAMA_STITCH_ENDPOINT for a separately hosted API, e.g. https://your-server.example/api/stitchlet stream=null,frames=[],lastYaw=null,startYaw=null,lastCaptureYaw=null,lastSensorTime=0,lastRate=0,latestYaw=null,raf=0,sensorActive=false,manualMode=true,previousYawDelta=0,finishedUrl=null,roomId=null,permissionHandler=null;
+ const STEP=24, STABILITY_LIMIT=28, MAX_SIDE=1280;
+ // Set window.PANORAMA_STITCH_ENDPOINT to the HTTPS URL of a separately hosted API when using GitHub Pages.
+ let stream=null, frames=[], lastYaw=null, startYaw=null, lastCaptureYaw=null, lastSensorTime=0, lastRate=0, latestYaw=null, raf=0, sensorActive=false, manualMode=true, previousYawDelta=0, finishedUrl=null, roomId=null, permissionHandler=null;
  for(let i=0;i<360/STEP;i++){const el=document.createElement('span');ticks.append(el)}
  function msg(t){status.textContent=t}
  function norm(a){return ((a%360)+360)%360}function angleDiff(a,b){return ((a-b+540)%360)-180}
